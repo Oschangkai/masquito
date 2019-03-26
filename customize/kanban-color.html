@@ -24,10 +24,10 @@
     <app-main [step]="thisPage" [next]="nextPage">
   <div id="step3" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; height: 100%; padding: 0 155px 0 155px;">
     <img id="show_step3" src="assets/03kanbanColor/oval_silver.png" width="55%" alt="1">
-    <div id="step3_right" style="display: flex; flex-direction: column; justify-content: space-between; height: 35%; padding: 0 0 0 65px;">
-      <img id="color1" src="assets/03kanbanColor/black_btn.png" style="padding-top: 16px;"  alt="1">
-      <img id="color2" src="assets/03kanbanColor/white_btn.png" style="padding-top: 16px;"  alt="2">
-      <img id="color3" src="assets/03kanbanColor/silver_btn.png" style="padding-top: 16px;"  alt="3">
+    <div id="step3_right" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 55%; margin-left: 30px;">
+      <img id="color1" src="assets/03kanbanColor/black_btn.png" width="100%" alt="1">
+      <img id="color2" src="assets/03kanbanColor/white_btn.png" alt="2">
+      <img id="color3" src="assets/03kanbanColor/silver_btn.png" alt="3">
     </div>
   </div>
 </app-main>
@@ -45,7 +45,10 @@
 	height: auto;
 	max-width: 50%;
 	max-height: 50%;
+  padding-top: 40px;
 }
-
+#step3_right img:first-child {
+  padding-top: 0px;
+}
 </style>
 </html>
