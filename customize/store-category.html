@@ -19,12 +19,32 @@
       margin-left: 0px;
     }
   </style>
+  <script type="text/javascript">
+      var point
+      function selectlogo(i){
+        if (point == null){
+          document.getElementById(i).src=i+"2.png";
+          point=i;
+        }
+        else if(point == i){
+          document.getElementById(i).src=i+"1.png";
+          point=null;
+        }
+        else if(point != null){
+          document.getElementById(point).src=point+"1.png";
+          document.getElementById(i).src=i+"2.png";
+          point=i;
+        }
+      }
+  </script>
 </head>
 <body>
   <div style="height: 84vh; width: 98vw;">
+  <a href="index.html">
   <div class="banner" style="padding: 10px 0 0 30px; height: 16vh; display: flex; align-items: center;">
-    <img src="assets/logo.png" alt="logo" height="70%" style="left:0%;" />
+    <img src="assets/logo.png" alt="logo" height="70%" style="left:0%;"/>
   </div>
+  </a>
   <div style="padding: 0 0 0 135px; height: 7vh; display: flex; align-items: center;">
     <img src="assets/01storeCategory/title.png" width="50%" alt="title" align="left" />
   </div>
@@ -32,31 +52,31 @@
     <app-main [step]="thisPage" [next]="nextPage">
   <div id="step1" style="display: flex; flex-direction: column; justify-content: center; align-self: center; height: 85%; padding: 6% 0 0 195px;">
     <div style="display: flex; flex-direction: row; align-items: center; height: 16.67%;">
-      <img id="cata1" src="assets/01storeCategory/01_1.png" align="left" alt="1" />
-      <img id="cata2" src="assets/01storeCategory/02_1.png" align="left" alt="2" />
+      <img id="assets/01storeCategory/01_" src="assets/01storeCategory/01_1.png" align="left" alt="1" onclick="selectlogo(id)"/>
+      <img id="assets/01storeCategory/02_" src="assets/01storeCategory/02_1.png" align="left" alt="2" onclick="selectlogo(id)"/>
     </div>
     <div style="display: flex; flex-direction: row; align-items: center; height: 16.67%;">
-      <img id="cata3" src="assets/01storeCategory/03_1.png" align="left" alt="3" />
-      <img id="cata4" src="assets/01storeCategory/04_1.png" align="left" alt="4" />
-      <img id="cata5" src="assets/01storeCategory/05_1.png" align="left" alt="5" />
+      <img id="assets/01storeCategory/03_" src="assets/01storeCategory/03_1.png" align="left" alt="3" onclick="selectlogo(id)"/>
+      <img id="assets/01storeCategory/04_" src="assets/01storeCategory/04_1.png" align="left" alt="4" onclick="selectlogo(id)"/>
+      <img id="assets/01storeCategory/05_" src="assets/01storeCategory/05_1.png" align="left" alt="5" onclick="selectlogo(id)"/>
     </div>
     <div style="display: flex; flex-direction: row; align-items: center; height: 16.67%;">
-      <img id="cata6" src="assets/01storeCategory/06_1.png" align="left" alt="6" />
-      <img id="cata7" src="assets/01storeCategory/07_1.png" align="left" alt="7" />
-      <img id="cata8" src="assets/01storeCategory/08_1.png" align="left" alt="8" />
+      <img id="assets/01storeCategory/06_" src="assets/01storeCategory/06_1.png" align="left" alt="6" onclick="selectlogo(id)"/>
+      <img id="assets/01storeCategory/07_" src="assets/01storeCategory/07_1.png" align="left" alt="7" onclick="selectlogo(id)"/>
+      <img id="assets/01storeCategory/08_" src="assets/01storeCategory/08_1.png" align="left" alt="8" onclick="selectlogo(id)"/>
     </div>
     <div style="display: flex; flex-direction: row; align-items: center; height: 16.67%;">
-      <img id="cata9" src="assets/01storeCategory/09_1.png" align="left" alt="9" />
-      <img id="cata10" src="assets/01storeCategory/10_1.png" align="left" alt="10" />
-      <img id="cata11" src="assets/01storeCategory/11_1.png" align="left" alt="11" />
+      <img id="assets/01storeCategory/09_" src="assets/01storeCategory/09_1.png" align="left" alt="9" onclick="selectlogo(id)"/>
+      <img id="assets/01storeCategory/10_" src="assets/01storeCategory/10_1.png" align="left" alt="10" onclick="selectlogo(id)"/>
+      <img id="assets/01storeCategory/11_" src="assets/01storeCategory/11_1.png" align="left" alt="11" onclick="selectlogo(id)"/>
     </div>
     <div style="display: flex; flex-direction: row; align-items: center; height: 16.67%;">
-      <img id="cata12" src="assets/01storeCategory/12_1.png" align="left" alt="12" />
-      <img id="cata13" src="assets/01storeCategory/13_1.png" align="left" alt="13" />
+      <img id="assets/01storeCategory/12_" src="assets/01storeCategory/12_1.png" align="left" alt="12" onclick="selectlogo(id)"/>
+      <img id="assets/01storeCategory/13_" src="assets/01storeCategory/13_1.png" align="left" alt="13" onclick="selectlogo(id)"/>
     </div>
     <div style="display: flex; flex-direction: row; align-items: center; height: 16.67%;">
-      <img id="cata14" src="assets/01storeCategory/14_1.png" align="left" alt="14" />
-      <img id="cata15" src="assets/01storeCategory/15_1.png" align="left" alt="15" />
+      <img id="assets/01storeCategory/14_" src="assets/01storeCategory/14_1.png" align="left" alt="14" onclick="selectlogo(id)"/>
+      <img id="assets/01storeCategory/15_" src="assets/01storeCategory/15_1.png" align="left" alt="15" onclick="selectlogo(id)"/>
     </div>
   </div>
 </app-main>
