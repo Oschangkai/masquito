@@ -8,33 +8,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      background: url('assets/bg.png') repeat
+      background: url('image/bg.png') repeat
     }
   </style>
 </head>
 <body>
   <div style="height: 84vh; width: 98vw;">
-  <a href="index.html">
+  <a href="_index.html">
   <div class="banner" style="padding: 10px 0 0 30px; height: 18vh; display: flex; align-items: center;"> 
-    <img src="assets/logo.png" alt="logo" height="70%" style="left:0%;" />  
+    <img src="image/logo.png" alt="logo" height="70%" style="left:0%;" />  
   </div>
   </a>
   <div style="padding: 0 0 0 135px; height: 7vh; display: flex; align-items: center;">
-    <!--<img src="assets/05kanbanStyle/title.png" width="50%" alt="title" align="left" />-->
-    <img src="assets/03kanbanColor/title.png" width="50%" alt="title" align="left" />
+    <img src="image/05kanbanStyle/title.png" width="50%" alt="title" align="left"/>
   </div>
   <div style="height: 57vh;">
     <app-main [step]="thisPage" [next]="nextPage">
-    <div id="step5" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80%;">
-        <img id="step5_show" src="assets/05kanbanStyle/oval/帥勾體/A圖/帥勾1-左-橢圓黑-海鮮.png" width="50%" alt="show">
+    <div id="step5" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 90%;">
+        <img id="step5_show" src="" width="50%" alt="show" onclick="selectlogo(id)">
     </div>
 </app-main>
   </div>
   <div style="height: 5vh; padding: 0 30px 30px 0;">
     <a href="customize/finish.html">
-      <img src="assets/next.png" height="100%" alt="next" align="right" />
+      <img id="next" src="image/next.png" height="100%" alt="next" align="right" onclick="selectlogo(id)"/>
     </a>
   </div>
 </div>
 </body>
 </html>
+<script type="text/javascript">
+    var result = JSON.parse(localStorage.getItem('store'));
+    document.getElementById("step5_show").src = "image/05kanbanStyle/"+result[0]+"/"+result[1]+"/"+result[0]+"-"+result[1]+"-"+result[2]+"-"+result[3]+"-"+"A"+".png"
+    var point=true, memory=new Array()
+    function selectlogo(i){
+      if (point == true && i != "next"){
+        document.getElementById(i).src="image/05kanbanStyle/"+result[0]+"/"+result[1]+"/"+result[0]+"-"+result[1]+"-"+result[2]+"-"+result[3]+"-"+"B"+".png"
+        point=false;
+      }
+      else if(point == false  && i != "next"){
+        document.getElementById(i).src="image/05kanbanStyle/"+result[0]+"/"+result[1]+"/"+result[0]+"-"+result[1]+"-"+result[2]+"-"+result[3]+"-"+"A"+".png";
+        point=true;
+      }
+      else if(i == "next"){
+        memory[0]=result[0];
+        memory[1]=result[1];
+        memory[2]=result[2];
+        memory[3]=result[3];
+        if (point == true){
+          memory[4] = "A";
+        }
+        else{
+          memory[4] = "B";
+        }
+        localStorage.setItem('store', JSON.stringify(memory));
+        window.location.href = "customize/finish.html";
+      }
+    }
+</script>
