@@ -25,9 +25,9 @@
       </div>
       <div style="height: 45vh;">
           <div id="step6" style="display: flex; flex-direction: row; align-items: center; justify-content: center; height: 100%;">
-            <img id="step6_show_left" src="image/05kanbanStyle/海鮮/圓/海鮮-圓-白-帥勾-左-A.png" width="30%" alt="show_left">
-            <img id="step6_show_center" src="image/05kanbanStyle/海鮮/圓/海鮮-圓-白-帥勾-A.png" width="30%" alt="show_center">
-            <img id="step6_show_right" src="image/05kanbanStyle/海鮮/圓/海鮮-圓-白-帥勾-右-A.png" width="30%" alt="show_right">
+            <!-- <img id="step6_show_left" src="image/05kanbanStyle/海鮮/圓/海鮮-圓-白-帥勾-左-A.png" width="30%" alt="show_left"> -->
+            <img id="step6_show_center" src="" width="40%" alt="show_center">
+            <!-- <img id="step6_show_right" src="image/05kanbanStyle/海鮮/圓/海鮮-圓-白-帥勾-右-A.png" width="30%" alt="show_right"> -->
           </div>
       </div>
       <div style="height: 8vh;">
@@ -53,8 +53,8 @@
 <script>
 var result = JSON.parse(localStorage.getItem('store'));
 console.log(result)
-document.getElementById("step6_show_left").src="image/05kanbanStyle/"+result[0]+"/"+result[1]+"/"+result[0]+"-"+result[1]+"-"+result[2]+"-"+result[3]+"-"+"左-"+result[4]+".png";
+// document.getElementById("step6_show_left").src="image/05kanbanStyle/"+result[0]+"/"+result[1]+"/"+result[0]+"-"+result[1]+"-"+result[2]+"-"+result[3]+"-"+"左-"+result[4]+".png";
 document.getElementById("step6_show_center").src="image/05kanbanStyle/"+result[0]+"/"+result[1]+"/"+result[0]+"-"+result[1]+"-"+result[2]+"-"+result[3]+"-"+result[4]+".png";
-document.getElementById("step6_show_right").src="image/05kanbanStyle/"+result[0]+"/"+result[1]+"/"+result[0]+"-"+result[1]+"-"+result[2]+"-"+result[3]+"-"+"右-"+result[4]+".png";
+// document.getElementById("step6_show_right").src="image/05kanbanStyle/"+result[0]+"/"+result[1]+"/"+result[0]+"-"+result[1]+"-"+result[2]+"-"+result[3]+"-"+"右-"+result[4]+".png";
 console.log(result)
 </script>
