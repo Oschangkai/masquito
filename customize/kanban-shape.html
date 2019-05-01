@@ -18,16 +18,13 @@
       var point, memory=new Array()
       var result = JSON.parse(localStorage.getItem('store'));
       console.log(result)
+      window.onload=show;
+      function show(){
+        document.getElementById("image/02kanbanShape/01_").src="image/02kanbanShape/01_2.png";
+        point="image/02kanbanShape/01_"
+      }
       function selectshape(i){
-        if (point == null && i != "next"){
-          document.getElementById(i).src=i+"2.png";
-          point=i;
-        }
-        else if(point == i && i != "next"){
-          document.getElementById(i).src=i+"1.png";
-          point=null;
-        }
-        else if(point != null && i != "next"){
+        if(i != "next"){
           document.getElementById(point).src=point+"1.png";
           document.getElementById(i).src=i+"2.png";
           point=i;

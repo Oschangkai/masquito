@@ -15,41 +15,29 @@
       var point, memory= new Array();
       var result = JSON.parse(localStorage.getItem('store'));
       console.log(result)
+      window.onload=show;
+      function show(){
+        document.getElementById("show_step3").src="image/03kanbanColor/"+result[1]+"_black.png";
+        document.getElementById("black_btn").src="image/03kanbanColor/black_btn_2.png";
+        point = "black_btn"
+      }
       function selectcolor(i){
-        if (point == null){
-        if (document.getElementById(i).alt == "黑"){
-          document.getElementById(i).src="image/03kanbanColor/black_btn_2.png";
-          document.getElementById("show_step3").src="image/03kanbanColor/"+"oval"+"_black.png";
-          point = i;
-        }
-        else if(document.getElementById(i).alt == "白"){
-          document.getElementById(i).src="image/03kanbanColor/white_btn_2.png";
-          document.getElementById("show_step3").src="image/03kanbanColor/"+"oval"+"_white.png";
-          point = i;
-        }
-        else if(document.getElementById(i).alt == "銀"){
-          document.getElementById(i).src="image/03kanbanColor/silver_btn_2.png";
-          document.getElementById("show_step3").src="image/03kanbanColor/"+"oval"+"_silver.png";
-          point = i;
-        }
-        }
-        else if(point != null){
         if (document.getElementById(i).alt == "黑" && i != "next"){
           document.getElementById(point).src="image/03kanbanColor/"+point+"_1.png";
           document.getElementById(i).src="image/03kanbanColor/black_btn_2.png";
-          document.getElementById("show_step3").src="image/03kanbanColor/"+"oval"+"_black.png";
+          document.getElementById("show_step3").src="image/03kanbanColor/"+result[1]+"_black.png";
           point = i;
         }
         else if(document.getElementById(i).alt == "白" && i != "next"){
           document.getElementById(point).src="image/03kanbanColor/"+point+"_1.png";
           document.getElementById(i).src="image/03kanbanColor/white_btn_2.png";
-          document.getElementById("show_step3").src="image/03kanbanColor/"+"oval"+"_white.png";
+          document.getElementById("show_step3").src="image/03kanbanColor/"+result[1]+"_white.png";
           point = i;
         }
         else if(document.getElementById(i).alt == "銀" && i != "next"){
           document.getElementById(point).src="image/03kanbanColor/"+point+"_1.png";
           document.getElementById(i).src="image/03kanbanColor/silver_btn_2.png";
-          document.getElementById("show_step3").src="image/03kanbanColor/"+"oval"+"_silver.png";
+          document.getElementById("show_step3").src="image/03kanbanColor/"+result[1]+"_silver.png";
           point = i;
         }
         else if(i == "next"){
@@ -58,7 +46,6 @@
         memory[2]=document.getElementById(point).alt;
         localStorage.setItem('store', JSON.stringify(memory));
         window.location.href = "customize/font-family.html";
-        }
         }
       }
   </script>
@@ -76,7 +63,7 @@
   <div style="height: 57vh;">
     <app-main [step]="thisPage" [next]="nextPage">
   <div id="step3" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; height: 100%; padding: 0 155px 0 155px;">
-    <img id="show_step3" src="image/03kanbanColor/oval_black.png" width="55%" alt="1">
+    <img id="show_step3" src="image/03kanbanColor/圓_black.png" width="55%" alt="1">
     <div id="step3_right" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 55%; margin-left: 30px;">
       <img id="black_btn" src="image/03kanbanColor/black_btn_1.png" width="100%" alt="黑" onclick="selectcolor(id)"/>
       <img id="white_btn" src="image/03kanbanColor/white_btn_1.png" alt="白" onclick="selectcolor(id)"/>

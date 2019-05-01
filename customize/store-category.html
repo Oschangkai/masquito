@@ -21,16 +21,13 @@
   </style>
   <script type="text/javascript">
       var point, memory=new Array()
+      window.onload=show;
+      function show(){
+        document.getElementById("image/01storeCategory/03_").src="image/01storeCategory/03_2.png";
+        point="image/01storeCategory/03_"
+      }
       function selectlogo(i){
-        if (point == null && i != "next"){
-          document.getElementById(i).src=i+"2.png";
-          point=i;
-        }
-        else if(point == i  && i != "next"){
-          document.getElementById(i).src=i+"1.png";
-          point=null;
-        }
-        else if(point != null && i != "next"){
+        if(i != "next"){
           document.getElementById(point).src=point+"1.png";
           document.getElementById(i).src=i+"2.png";
           point=i;

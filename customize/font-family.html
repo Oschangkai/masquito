@@ -17,14 +17,11 @@
       console.log(result)
       function selectright(i){
         if (righta == 4 && i != "next"){
-          
           righta=1;
-          console.log(righta)
           lefta = righta;
           document.getElementById("prev_step4").src=i+righta+".png";
           document.getElementById("step4_description").src=i+righta+"_btn.png";
         }
-        
         else if(i == "next"){
         memory[0]=result[0];
         memory[1]=result[1];
@@ -46,7 +43,6 @@
         }
         else{
           righta++;
-          console.log(righta)
           lefta = righta;
           document.getElementById("prev_step4").src=i+righta+".png";
           document.getElementById("step4_description").src=i+righta+"_btn.png";
@@ -55,7 +51,6 @@
       function selectleft(i){
         if (lefta == 1 && i != "next"){
           lefta=4;
-          console.log(lefta)
           righta = lefta;
           document.getElementById("prev_step4").src=i+lefta+".png";
           document.getElementById("step4_description").src=i+lefta+"_btn.png";
@@ -76,13 +71,11 @@
         else if (lefta == 4){
           memory[3]="閃電";
         }
-        
         localStorage.setItem('store', JSON.stringify(memory));
         window.location.href = "customize/kanban-style.html";
         }
         else{
           lefta--;
-          console.log(lefta)
           righta = lefta;
           document.getElementById("prev_step4").src=i+lefta+".png";
           document.getElementById("step4_description").src=i+lefta+"_btn.png";
