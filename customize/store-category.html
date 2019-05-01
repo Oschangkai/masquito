@@ -1,78 +1,84 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Shopping</title>
-  <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      background: url('image/bg.png') repeat
-    }
-    #step1 img {
-      margin-left: -4px;
-      margin: 10px 15px 15px 8px;
-      height: 55px;
-    }
-    #step1 img:first-child {
-      margin-left: 0px;
-    }
-  </style>
-  <script type="text/javascript">
-      var point, memory=new Array()
-      window.onload=show;
-      function show(){
-        document.getElementById("image/01storeCategory/03_").src="image/01storeCategory/03_2.png";
-        point="image/01storeCategory/03_"
-      }
-      function selectlogo(i){
-        if(i != "next"){
-          document.getElementById(point).src=point+"1.png";
-          document.getElementById(i).src=i+"2.png";
-          point=i;
+<head>
+    <meta charset="utf-8">
+    <title>Shopping</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: url('image/bg.png') repeat
         }
-        else if(i == "next"){
-          memory[0]=document.getElementById(point).alt;
-		   	  localStorage.setItem('store', JSON.stringify(memory));
-			    window.location.href = "customize/kanban-shape.html";
+        
+        #step1 img {
+            margin-left: -4px;
+            margin: 10px 15px 15px 8px;
+            height: 55px;
         }
-      }
-  </script>
+        
+        #step1 img:first-child {
+            margin-left: 0px;
+        }
+    </style>
+    <script type="text/javascript">
+        var point, memory = new Array()
+        window.onload = show;
+
+        function show() {
+            document.getElementById("image/01storeCategory/03_").src = "image/01storeCategory/03_2.png";
+            point = "image/01storeCategory/03_"
+        }
+
+        function selectlogo(i) {
+            if (i != "next") {
+                document.getElementById(point).src = point + "1.png";
+                document.getElementById(i).src = i + "2.png";
+                point = i;
+            } else if (i == "next") {
+                memory[0] = document.getElementById(point).alt;
+                localStorage.setItem('store', JSON.stringify(memory));
+                window.location.href = "customize/kanban-shape.html";
+            }
+        }
+    </script>
 </head>
+
 <body>
-  <div style="height: 84vh; width: 98vw;">
-  <a href="index.html">
-  <div class="banner" style="padding: 10px 0 0 30px; height: 16vh; display: flex; align-items: center;">
-    <img src="image/logo.png" alt="logo" height="55%" style="left:0%;"/>
-  </div>
-  </a>
-  <div style="padding: 0 0 0 135px; height: 7vh; display: flex; align-items: center;">
-    <img src="image/01storeCategory/title.png" width="50%" alt="title" align="left" />
-  </div>
-  <div style="height: 57vh;">
-    <app-main [step]="thisPage" [next]="nextPage">
-  <div id="step1" style="display: flex; flex-direction: column; justify-content: center; align-self: center; height: 40%; padding: 6% 0 0 195px;">
-    <div style="display: flex; flex-direction: row; align-items: center; height: 65%;">
-      <img id="image/01storeCategory/03_" src="image/01storeCategory/03_1.png" align="left" alt="海鮮" onclick="selectlogo(id)"/>
-      <img id="image/01storeCategory/04_" src="image/01storeCategory/04_1.png" align="left" alt="羊肉爐" onclick="selectlogo(id)"/>
+    <div style="height: 84vh; width: 98vw;">
+        <a href="index.html">
+            <div class="banner" style="padding: 10px 0 0 30px; height: 16vh; display: flex; align-items: center;">
+                <img src="image/logo.png" alt="logo" height="70%" style="left:0%;" />
+            </div>
+        </a>
+        <div style="padding: 0 0 0 135px; height: 7vh; display: flex; align-items: center;">
+            <img src="image/01storeCategory/title.png" width="50%" alt="title" align="left" />
+        </div>
+        <div style="height: 57vh;">
+            <app-main [step]="thisPage" [next]="nextPage">
+                <div id="step1" style="display: flex; flex-direction: column; align-self: center; height: 85%; padding: 6% 0 0 195px;">
+                    <div style="display: flex; flex-direction: row; align-items: center; height: 16.7%;">
+                        <img id="image/01storeCategory/03_" src="image/01storeCategory/03_1.png" align="left" alt="海鮮" onclick="selectlogo(id)" />
+                        <img id="image/01storeCategory/04_" src="image/01storeCategory/04_1.png" align="left" alt="羊肉爐" onclick="selectlogo(id)" />
+                    </div>
+                    <div style="display: flex; flex-direction: row; align-items: center; height: 16.7%;">
+                        <img id="image/01storeCategory/07_" src="image/01storeCategory/07_1.png" align="left" alt="蛇肉湯" onclick="selectlogo(id)" />
+                        <img id="image/01storeCategory/11_" src="image/01storeCategory/11_1.png" align="left" alt="果汁" onclick="selectlogo(id)" />
+                    </div>
+                    <div style="display: flex; flex-direction: row; align-items: center; height: 16.7%;">
+                        <img id="image/01storeCategory/13_" src="image/01storeCategory/13_1.png" align="left" alt="烤魷魚" onclick="selectlogo(id)" />
+                        <img id="image/01storeCategory/14_" src="image/01storeCategory/14_1.png" align="left" alt="烤玉米" onclick="selectlogo(id)" />
+                    </div>
+                </div>
+            </app-main>
+        </div>
+        <div style="height: 5vh; padding: 0 30px 30px 0;">
+            <a href="customize/kanban-shape.html">
+                <img id="next" src="image/next.png" height="100%" alt="next" align="right" onclick="selectlogo(id)" />
+            </a>
+        </div>
     </div>
-    <div style="display: flex; flex-direction: row; align-items: center; height: 65%;">
-      <img id="image/01storeCategory/07_" src="image/01storeCategory/07_1.png" align="left" alt="蛇肉湯" onclick="selectlogo(id)"/>
-      <img id="image/01storeCategory/11_" src="image/01storeCategory/11_1.png" align="left" alt="果汁" onclick="selectlogo(id)"/>
-    </div>
-    <div style="display: flex; flex-direction: row; align-items: center; height: 65%;">
-      <img id="image/01storeCategory/13_" src="image/01storeCategory/13_1.png" align="left" alt="烤魷魚" onclick="selectlogo(id)"/>
-      <img id="image/01storeCategory/14_" src="image/01storeCategory/14_1.png" align="left" alt="烤玉米" onclick="selectlogo(id)"/>
-    </div>
-  </div>
-</app-main>
-  </div>
-  <div style="height: 5vh; padding: 0 30px 30px 0;">
-    <a href="customize/kanban-shape.html">
-      <img id="next" src="image/next.png" height="100%" alt="next" align="right" onclick="selectlogo(id)"/>
-    </a>
-  </div>
-</div>
 </body>
+
 </html>
