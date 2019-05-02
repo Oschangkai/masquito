@@ -15,11 +15,15 @@
       var righta=1, lefta=1, memory=new Array(),a
       var result = JSON.parse(localStorage.getItem('store'));
       console.log(result)
+      window.onload=show;
+      function show(){
+        document.getElementById("prev_step4").src="image/04fontFamily/01"+"_"+result[0]+".png";
+      }
       function selectright(i){
         if (righta == 4 && i != "next"){
           righta=1;
           lefta = righta;
-          document.getElementById("prev_step4").src=i+righta+".png";
+          document.getElementById("prev_step4").src=i+righta+"_"+result[0]+".png";
           document.getElementById("step4_description").src=i+righta+"_btn.png";
         }
         else if(i == "next"){
@@ -44,7 +48,7 @@
         else{
           righta++;
           lefta = righta;
-          document.getElementById("prev_step4").src=i+righta+".png";
+          document.getElementById("prev_step4").src=i+righta+"_"+result[0]+".png";
           document.getElementById("step4_description").src=i+righta+"_btn.png";
         }
       }
@@ -52,7 +56,7 @@
         if (lefta == 1 && i != "next"){
           lefta=4;
           righta = lefta;
-          document.getElementById("prev_step4").src=i+lefta+".png";
+          document.getElementById("prev_step4").src=i+lefta+"_"+result[0]+".png";
           document.getElementById("step4_description").src=i+lefta+"_btn.png";
         }
         else if(i == "next"){
@@ -77,7 +81,7 @@
         else{
           lefta--;
           righta = lefta;
-          document.getElementById("prev_step4").src=i+lefta+".png";
+          document.getElementById("prev_step4").src=i+lefta+"_"+result[0]+".png";
           document.getElementById("step4_description").src=i+lefta+"_btn.png";
         }
       }
@@ -98,7 +102,7 @@
                 <div id="step4" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; height: 80%; padding: 0 155px 0 155px;">
                   <img id="image/04fontFamily/0" src="image/04fontFamily/left.png" width="15%" alt="prev" onclick="selectleft(id)"/>
                   <div id="step4_show" style="display: flex; align-items: center; justify-content: center; height: 100%;">
-                    <img id="prev_step4" src="image/04fontFamily/01.png" width="55%" alt="show"/>     
+                    <img id="prev_step4" src="" width="90%" alt="show"/>
                   </div>
                   <img id="image/04fontFamily/0" src="image/04fontFamily/right.png" width="15%" alt="next" onclick="selectright(id)"/>
                 </div>
